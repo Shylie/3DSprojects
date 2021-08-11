@@ -1,0 +1,69 @@
+#ifndef _GLIB_H_
+#define _GLIB_H_
+
+#include <3ds.h>
+#include <citro3d.h>
+
+class glib
+{
+public:
+	struct color
+	{
+		color(unsigned char r, unsigned char g, unsigned char b, unsigned char a = 255);
+		color(int c);
+		color(unsigned int c);
+
+		unsigned char r;
+		unsigned char g;
+		unsigned char b;
+		unsigned char a;
+
+		operator int() const;
+		operator unsigned int() const;
+	};
+
+	struct vertex
+	{
+		vertex(float x, float y, color c);
+		vertex(float x, float y, float z, color c);
+		vertex(float x, float y, float z, float nx, float ny, float nz, color c);
+
+		float position[3];
+		float color[4];
+		float normal[3];
+	};
+
+	glib();
+	~glib();
+
+	glib(const glib&) = delete;
+	glib(glib&&) = delete;
+
+	glib& operator=(const glib&) = delete;
+	glib& operator=(glib&&) = delete;
+
+	color setClearColor(color newColor);
+	C3D_Mtx* projection();
+	C3D_Mtx* model();
+	void beginFrame();
+	void endFrame();
+
+	void tri(vertex a, vertex b, vertex c);
+	void flush();
+
+private:
+	static constexpr int VBO_SIZE = 3 * 100;
+
+	DVLB_s* vshader_dvlb;
+	shaderProgram_s program;
+	int uLoc_projection;
+	int uLoc_modelView;
+	C3D_Mtx _projection;
+	C3D_Mtx _model;
+	C3D_RenderTarget* target;
+	int clearColor;
+	vertex* vbo;
+	int vbo_offset;
+};
+
+#endif // _GLIB_H_
