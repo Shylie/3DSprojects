@@ -11,3 +11,9 @@
 /glib/lib
 /glib/Debug
 /glib/build
+/glib/Release
+/demo/Release
+/demo/x64/Release
+/glib/x64/Release
+/glib/x64/Debug
+/demo/x64/Debug
