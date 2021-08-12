@@ -48,11 +48,15 @@ public:
 	void beginFrame();
 	void endFrame();
 
-	void tri(vertex a, vertex b, vertex c);
+	void rect(float x, float y, float w, float h, color col);
+	
+	void push(vertex v1, vertex v2, vertex v3);
+	void push(vertex* vertices, int cnt);
+	void push(vertex* vertices, int* indices, int cnt);
 	void flush();
 
 private:
-	static constexpr int VBO_SIZE = 3 * 100;
+	static constexpr int VBO_SIZE = 3 * 500;
 
 	DVLB_s* vshader_dvlb;
 	shaderProgram_s program;

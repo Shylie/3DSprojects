@@ -83,15 +83,61 @@ void glib::endFrame()
 	C3D_FrameEnd(0);
 }
 
-void glib::tri(vertex a, vertex b, vertex c)
+void glib::rect(float x, float y, float w, float h, color col)
+{
+	vertex bl{ x, y, col };
+	vertex br{ x + w, y, col };
+	vertex tl{ x, y + h, col };
+	vertex tr{ x + w, y + h, col };
+
+	push(bl, br, tl);
+	push(tl, br, tr);
+}
+
+void glib::push(vertex v1, vertex v2, vertex v3)
 {
 	if (vbo_offset + 3 >= VBO_SIZE) { flush(); }
+	vbo[vbo_offset++] = v1;
+	vbo[vbo_offset++] = v2;
+	vbo[vbo_offset++] = v3;
+}
 
-	vbo[vbo_offset] = a;
-	vbo[vbo_offset + 1] = b;
-	vbo[vbo_offset + 2] = c;
+void glib::push(vertex* vertices, int cnt)
+{
+	if (vbo_offset + cnt >= VBO_SIZE)
+	{
+		for (int i = 0; i < cnt; i++)
+		{
+			if (vbo_offset + 1 >= VBO_SIZE) { flush(); }
+			vbo[vbo_offset++] = vertices[i];
+		}
+	}
+	else
+	{
+		for (int i = 0; i < cnt; i++)
+		{
+			vbo[vbo_offset++] = vertices[i];
+		}
+	}
+}
 
-	vbo_offset += 3;
+void glib::push(vertex* vertices, int* indices, int cnt)
+{
+	if (vbo_offset + cnt >= VBO_SIZE)
+	{
+		for (int i = 0; i < cnt; i++)
+		{
+			if (vbo_offset + 1 >= VBO_SIZE) { flush(); }
+			vbo[vbo_offset++] = vertices[indices[i]];
+		}
+	}
+	else
+	{
+		for (int i = 0; i < cnt; i++)
+		{
+			vbo[vbo_offset++] = vertices[indices[i]];
+		}
+	}
 }
 
 void glib::flush()

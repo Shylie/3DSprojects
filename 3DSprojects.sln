@@ -10,6 +10,16 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "demo", "demo\demo.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glib", "glib\glib.vcxproj", "{7BC355EA-1E65-41DA-BD1F-0AA0CE7A8E8F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{60999D79-C736-4622-821B-D33F86F0A478}"
+	ProjectSection(SolutionItems) = preProject
+		Makefile = Makefile
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "whg", "whg\whg.vcxproj", "{971CB9A7-B1E9-4BD8-AF8C-344D57752D19}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7BC355EA-1E65-41DA-BD1F-0AA0CE7A8E8F} = {7BC355EA-1E65-41DA-BD1F-0AA0CE7A8E8F}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -34,6 +44,14 @@ Global
 		{7BC355EA-1E65-41DA-BD1F-0AA0CE7A8E8F}.Release|x64.Build.0 = Release|x64
 		{7BC355EA-1E65-41DA-BD1F-0AA0CE7A8E8F}.Release|x86.ActiveCfg = Release|Win32
 		{7BC355EA-1E65-41DA-BD1F-0AA0CE7A8E8F}.Release|x86.Build.0 = Release|Win32
+		{971CB9A7-B1E9-4BD8-AF8C-344D57752D19}.Debug|x64.ActiveCfg = Debug|x64
+		{971CB9A7-B1E9-4BD8-AF8C-344D57752D19}.Debug|x64.Build.0 = Debug|x64
+		{971CB9A7-B1E9-4BD8-AF8C-344D57752D19}.Debug|x86.ActiveCfg = Debug|Win32
+		{971CB9A7-B1E9-4BD8-AF8C-344D57752D19}.Debug|x86.Build.0 = Debug|Win32
+		{971CB9A7-B1E9-4BD8-AF8C-344D57752D19}.Release|x64.ActiveCfg = Release|x64
+		{971CB9A7-B1E9-4BD8-AF8C-344D57752D19}.Release|x64.Build.0 = Release|x64
+		{971CB9A7-B1E9-4BD8-AF8C-344D57752D19}.Release|x86.ActiveCfg = Release|Win32
+		{971CB9A7-B1E9-4BD8-AF8C-344D57752D19}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
