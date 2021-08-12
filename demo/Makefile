@@ -57,7 +57,13 @@ CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++14
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=3dsx.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
+BUILDTYPE ?= RELEASE
+
+ifneq ($(BUILDTYPE),DEBUG)
 LIBS	:=  -lglib -lcitro3d -lctru -lm
+else
+LIBS	:=  -lglib -lcitro3dd -lctrud -lm
+endif
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing

@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/3DSprojects
+/demo/build
+/demo/Debug
+/demo/demo.3dsx
+/demo/demo.elf
+/demo/demo.smdh
+/glib/lib
+/glib/Debug
+/glib/build

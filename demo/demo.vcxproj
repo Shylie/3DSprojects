@@ -63,25 +63,25 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeBuildCommandLine>make GLIB=$(SolutionDir)glib</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>make GLIB=$(SolutionDir)glib BUILDTYPE=DEBUG</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeIncludeSearchPath>$(DEVKIT3DSINCLUDE);$(SolutionDir)glib\include</NMakeIncludeSearchPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <NMakeBuildCommandLine>make GLIB=$(SolutionDir)glib</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>make GLIB=$(SolutionDir)glib BUILDTYPE=DEBUG</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
     <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeIncludeSearchPath>$(DEVKIT3DSINCLUDE);$(SolutionDir)glib\include</NMakeIncludeSearchPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <NMakeBuildCommandLine>make GLIB=$(SolutionDir)glib</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>make GLIB=$(SolutionDir)glib BUILDTYPE=RELEASE</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
     <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeIncludeSearchPath>$(DEVKIT3DSINCLUDE);$(SolutionDir)glib\include</NMakeIncludeSearchPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <NMakeBuildCommandLine>make GLIB=$(SolutionDir)glib</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>make GLIB=$(SolutionDir)glib BUILDTYPE=RELEASE</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
     <NMakePreprocessorDefinitions>NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeIncludeSearchPath>$(DEVKIT3DSINCLUDE);$(SolutionDir)glib\include</NMakeIncludeSearchPath>
